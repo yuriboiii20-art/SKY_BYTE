@@ -947,218 +947,246 @@ body.dark .main {
   }
 }
 
-/* Standard Mobile Devices (up to 600px) - Compact Native App Layout */
+/* Standard Mobile Devices (up to 600px) - Spacious & Clean Native Layout */
 @media (max-width: 600px) {
   body {
-    padding: 6px;
+    padding: 14px 10px 24px 10px;
+  }
+
+  .app {
+    gap: 4px;
   }
 
   .card, .glass-panel {
-    border-radius: 14px;
-    padding: 8px 10px;
+    border-radius: 16px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
   }
 
   header {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 
   header h1 {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
   }
 
   .header-logo {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .sound-btn {
-    padding: 4px 8px;
-    font-size: 0.75rem;
+    padding: 6px 12px;
+    font-size: 0.78rem;
   }
 
   .theme-switch {
-    width: 50px;
-    height: 25px;
+    width: 54px;
+    height: 28px;
   }
 
   .switch-slider::before {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
     left: 3px;
     bottom: 3px;
   }
 
   .theme-switch input:checked + .switch-slider::before {
-    transform: translateX(24px);
+    transform: translateX(26px);
   }
 
   .search-container {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 
   .search {
-    padding: 4px 6px;
-    gap: 6px;
+    padding: 6px 8px;
+    gap: 8px;
   }
 
   .search input {
-    font-size: 0.85rem;
-    padding: 6px 10px;
-    border-radius: 10px;
+    font-size: 0.88rem;
+    padding: 8px 12px;
+    border-radius: 12px;
   }
 
   .mic-btn {
-    padding: 6px 8px;
-    font-size: 0.95rem;
-    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border-radius: 12px;
   }
 
   .search button#search-btn {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 0.88rem;
+    border-radius: 12px;
   }
 
   .favorites-bar {
-    margin-bottom: 6px;
+    margin-bottom: 14px;
+    gap: 10px;
   }
 
   .fav-chip {
-    font-size: 0.72rem;
-    padding: 3px 8px;
-    border-radius: 14px;
+    font-size: 0.76rem;
+    padding: 5px 11px;
+    border-radius: 16px;
+  }
+
+  .dashboard-grid {
+    gap: 14px;
+  }
+
+  .main-content {
+    gap: 14px;
   }
 
   .main {
-    padding: 10px 12px;
+    padding: 14px 16px;
   }
 
   .weather-hero {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     text-align: left;
-    margin-top: 2px;
+    margin-top: 6px;
+    padding: 4px 0;
   }
 
   .weather-hero img, .weather-icon-hero svg {
-    width: 54px !important;
-    height: 54px !important;
+    width: 68px !important;
+    height: 68px !important;
   }
 
   .weather-hero h2 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     line-height: 1;
   }
 
   #desc {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
+    margin-top: 2px;
   }
 
   #location {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    margin-top: 2px;
   }
 
   #time {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
+    margin-top: 2px;
   }
 
   .main-header-row {
     justify-content: space-between;
-    gap: 4px;
+    gap: 6px;
   }
 
   .badge, .clothing-tip-badge {
-    font-size: 0.68rem;
-    padding: 2px 7px;
+    font-size: 0.72rem;
+    padding: 4px 10px;
   }
 
   .sub-features-row {
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 10px;
   }
 
   .sun-time-card {
     grid-column: span 2;
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    justify-content: space-between;
   }
 
   .air-card, .uv-card {
-    font-size: 0.75rem;
-    padding: 6px 8px;
+    font-size: 0.8rem;
+    padding: 10px 12px;
   }
 
   .aqi-badge, .uv-badge {
-    font-size: 0.7rem;
-    padding: 2px 6px;
+    font-size: 0.74rem;
+    padding: 3px 8px;
   }
 
   .stats-container {
-    gap: 6px;
+    gap: 10px;
   }
 
   .stats {
     grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
+    gap: 8px;
   }
 
   .stats .card {
-    padding: 6px 2px;
-    font-size: 0.72rem;
+    padding: 10px 6px;
+    font-size: 0.75rem;
+    border-radius: 14px;
   }
 
   .stats .card span {
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
+    margin-top: 2px;
   }
 
   .wind-card {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    padding: 10px 14px;
+    font-size: 0.8rem;
     flex-direction: row;
-    gap: 8px;
+    justify-content: space-around;
+    gap: 10px;
   }
 
   #arrow {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .sidebar-forecast {
+    margin-top: 4px;
   }
 
   .sidebar-forecast h3 {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
+    margin-bottom: 8px;
   }
 
   .forecast-vertical {
-    gap: 6px;
+    gap: 8px;
+    padding-bottom: 8px;
   }
 
   .forecast-item {
-    min-width: 78px;
-    padding: 6px 8px;
-    border-radius: 12px;
+    min-width: 86px;
+    padding: 10px 10px;
+    border-radius: 14px;
   }
 
   .forecast-item .day-name {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
   }
 
   .forecast-item .forecast-icon svg {
-    width: 28px !important;
-    height: 28px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .forecast-item .day-temp {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
-
 
 /* Small Mobile Screens (up to 380px) */
 @media (max-width: 380px) {
   body {
-    padding: 6px 4px;
+    padding: 10px 6px 20px 6px;
   }
 
   .btn-text {
@@ -1186,17 +1214,26 @@ body.dark .main {
   }
 
   .search input {
-    font-size: 0.82rem;
-    padding: 6px 8px;
+    font-size: 0.84rem;
+    padding: 7px 10px;
   }
 
   .search button#search-btn {
-    padding: 6px 10px;
-    font-size: 0.82rem;
+    padding: 7px 12px;
+    font-size: 0.84rem;
   }
 
   .fav-chip {
-    font-size: 0.7rem;
-    padding: 3px 8px;
+    font-size: 0.72rem;
+    padding: 4px 9px;
+  }
+
+  .weather-hero img, .weather-icon-hero svg {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .weather-hero h2 {
+    font-size: 2.2rem;
   }
 }
