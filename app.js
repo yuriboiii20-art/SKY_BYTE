@@ -1,4 +1,4 @@
-const API_KEY = localStorage.getItem("OWM_API_KEY") || "YOUR_OPENWEATHER_API_KEY";
+const API_KEY = localStorage.getItem("OWM_API_KEY") || "534aadf9e6550b59a3da634d2688923e";
 const el = id => document.getElementById(id);
 const loader = el("loader");
 const searchInput = el("search-input");
@@ -42,9 +42,10 @@ function notify(msg) {
   }
 }
 
-/* 📍 Auto Location */
+/* 📍 Auto Location & Quick Favorite City Chips */
 window.onload = () => {
   initCanvas();
+  setupFavoriteChips();
   navigator.geolocation
     ? navigator.geolocation.getCurrentPosition(
         pos => fetchByCoords(pos.coords.latitude, pos.coords.longitude),
@@ -52,6 +53,18 @@ window.onload = () => {
       )
     : fetchWeather("Delhi");
 };
+
+function setupFavoriteChips() {
+  document.querySelectorAll(".fav-chip").forEach(chip => {
+    chip.onclick = () => {
+      const city = chip.getAttribute("data-city");
+      if (city) {
+        searchInput.value = city;
+        fetchWeather(city);
+      }
+    };
+  });
+}
 
 el("search-btn").onclick = () => {
   hideAutocomplete();
@@ -262,7 +275,6 @@ function fetchByCoords(lat, lon) {
 }
 
 function updateUI(d) {
-  // Render Animated Weather Icon instead of static OpenWeather png / emojis
   const isNight = d.weather[0].icon.includes('n');
   el("weather-icon-container").innerHTML = getAnimatedWeatherIcon(d.weather[0].id, isNight, 84);
 
@@ -289,16 +301,36 @@ function updateUI(d) {
   /* 💡 Smart Clothing Tip Advisor */
   updateClothingTip(d.main.temp, d.weather[0].main);
 
-  /* 🍃 Air Quality API Fetch */
+  /* 🍃 Air Quality & UV Index */
   fetchAirQuality(d.coord.lat, d.coord.lon);
+  calculateUVIndex(d.clouds.all, isNight);
 
   /* 🌩 Weather Background Dynamics */
   applyDynamicWeatherBackground(d.weather[0].id, d.weather[0].main);
 
-  /* Audio update if playing */
   if (isSoundActive) playAmbientSoundscape();
 
   fetchForecast(d.coord.lat, d.coord.lon);
+}
+
+/* ☀️ UV Index Estimator Logic */
+function calculateUVIndex(cloudCover, isNight) {
+  const uvEl = el("uv-badge");
+  if (isNight) {
+    uvEl.textContent = "0 (Low)";
+    uvEl.style.background = "#2ed573";
+    uvEl.style.color = "#000";
+    return;
+  }
+  let estimatedUV = Math.max(1, Math.round((100 - cloudCover) / 10));
+  let status = "Low 🟢";
+  let color = "#2ed573";
+  if (estimatedUV >= 3 && estimatedUV <= 5) { status = "Moderate 🟡"; color = "#eccc68"; }
+  else if (estimatedUV >= 6 && estimatedUV <= 7) { status = "High 🟠"; color = "#ffa502"; }
+  else if (estimatedUV >= 8) { status = "Very High 🔴"; color = "#ff4757"; }
+  uvEl.textContent = `${estimatedUV} (${status})`;
+  uvEl.style.background = color;
+  uvEl.style.color = "#000";
 }
 
 /* 💡 Smart Clothing Tip Advisor Logic */
@@ -349,7 +381,7 @@ el("temp").onclick = () => {
   isCelsius = !isCelsius;
 };
 
-/* 📅 Forecast with Animated SVG Weather Icons */
+/* 📅 Forecast */
 function fetchForecast(lat, lon) {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
     .then(r => {

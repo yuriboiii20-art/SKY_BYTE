@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SKY-BYTE</title>
   <!-- 🌐 Favicon (Tab Logo) -->
   <link rel="icon" type="image/png" href="logo.png" />
@@ -47,7 +47,7 @@
       <div class="header-controls">
         <!-- 🔊 Weather Ambient Soundscape Toggle Button -->
         <button id="soundscape-btn" class="glass-btn sound-btn" title="Toggle Weather Audio Ambient Soundscape">
-          <span id="sound-icon">🔇</span> Sound
+          <span id="sound-icon">🔇</span> <span class="btn-text">Sound</span>
         </button>
 
         <!-- Creative Animated Theme Switch -->
@@ -71,15 +71,30 @@
       <div id="autocomplete-list" class="autocomplete-dropdown glass-panel"></div>
     </div>
 
+    <!-- Quick Favorite Cities Chips Bar -->
+    <div class="favorites-bar">
+      <span class="fav-label">Popular:</span>
+      <div id="fav-chips" class="fav-chips-container">
+        <button class="fav-chip" data-city="London">🇬🇧 London</button>
+        <button class="fav-chip" data-city="New York">🇺🇸 New York</button>
+        <button class="fav-chip" data-city="Tokyo">🇯🇵 Tokyo</button>
+        <button class="fav-chip" data-city="Paris">🇫🇷 Paris</button>
+        <button class="fav-chip" data-city="Dubai">🇦🇪 Dubai</button>
+        <button class="fav-chip" data-city="Sydney">🇦🇺 Sydney</button>
+      </div>
+    </div>
+
     <p class="notification" id="notification"></p>
     <div class="loader" id="loader"></div>
 
     <!-- Main Dashboard 2-Column Grid Layout -->
     <div class="dashboard-grid">
 
-      <!-- LEFT COLUMN: 5-Day Forecast -->
+      <!-- LEFT COLUMN: 5-Day Forecast Sidebar -->
       <aside class="sidebar-forecast">
-        <h3>5-Day Forecast</h3>
+        <div class="section-title-row">
+          <h3>5-Day Forecast</h3>
+        </div>
         <div id="forecast" class="forecast-vertical"></div>
       </aside>
 
@@ -92,7 +107,7 @@
           </div>
           <div class="weather-hero">
             <div id="weather-icon-container" class="weather-icon-hero"></div>
-            <div>
+            <div class="hero-temp-details">
               <h2 id="temp" title="Click to toggle °C / °F">--°C</h2>
               <p id="desc">---</p>
               <p id="location">---</p>
@@ -101,15 +116,21 @@
           </div>
         </section>
 
-        <!-- Advanced Sun & Air Quality Bar -->
+        <!-- Advanced Sub-Features Grid (Air Quality, Sunrise/Sunset, UV & Humidity Meter) -->
         <section class="sub-features-row">
           <div class="card glass-panel air-card">
-            <span>🍃 Air Quality</span>
+            <span class="card-label">🍃 Air Quality</span>
             <span id="aqi-val" class="aqi-badge">--</span>
           </div>
+
           <div class="card glass-panel sun-time-card">
             <span>🌅 Sunrise <strong id="sunrise-time">--:--</strong></span>
             <span>🌇 Sunset <strong id="sunset-time">--:--</strong></span>
+          </div>
+
+          <div class="card glass-panel uv-card">
+            <span class="card-label">☀️ UV Index</span>
+            <span id="uv-badge" class="uv-badge">--</span>
           </div>
         </section>
 
