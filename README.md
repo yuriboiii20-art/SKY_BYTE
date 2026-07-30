@@ -1,6 +1,28 @@
 # 🌦️ SKY-BYTE | Next-Gen Interactive Weather Dashboard
 
-A premium, single-page **Glassmorphism Weather Dashboard** built with modern HTML5, CSS3, Vanilla JavaScript, Canvas Particle Physics, Web Audio API, and OpenWeatherMap APIs.
+<p align="center">
+  <img src="logo.png" alt="SKY-BYTE Logo" width="90" />
+</p>
+
+<p align="center">
+  A premium, single-page <strong>Glassmorphism Weather Dashboard</strong> built with HTML5, CSS3, Vanilla JavaScript, HTML5 Canvas Physics, Web Audio API, and OpenWeather APIs.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Design-Glassmorphism-00eaff?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Responsive-Mobile--First-ff4757?style=for-the-badge" />
+</p>
+
+---
+
+## 📸 Application Screenshots
+
+### 💻 Desktop Dashboard Layout
+![SKY-BYTE Desktop Dashboard](desktop_screenshot.png)
+
+### 📱 Responsive Mobile View
+![SKY-BYTE Mobile Dashboard](mobile_screenshot.png)
 
 ---
 
@@ -13,10 +35,12 @@ A premium, single-page **Glassmorphism Weather Dashboard** built with modern HTM
   - ⚡️ **Thunderstorm**: Flashing screen lightning overlay effect with storm cloud layers.
   - ❄️ **Snow**: Soft drifting snowfall canvas physics engine.
 - **✨ Animated SVG Weather Icons**: Living micro-scene SVG weather icons with rotation, flashing lightning, rain animation, and drifting clouds.
+- **🏷️ Quick Favorite City Chips**: One-click instant weather loading for top global cities (London, New York, Tokyo, Paris, Dubai, Sydney).
 - **🎙️ AI Voice Search**: Integrated Web Speech API for hands-free voice city searching.
 - **🔊 Generative Soundscape Audio**: Web Audio API procedural sound engine generating ambient rain noise and calming synth tones.
 - **🔍 Smart Autocomplete**: Real-time city search suggestions using OpenWeather Direct Geocoding.
 - **🍃 Live Air Quality Index (AQI)**: Color-coded air quality readings (Good 🟢, Moderate 🟠, Poor 🔴, Very Poor 🟣).
+- **☀️ UV Index Estimator**: Real-time UV intensity indicators with safety status badges.
 - **💡 Smart Outfit & Travel Advisor**: Real-time clothing recommendations based on temperature and weather conditions.
 - **🌅 Sunrise & Sunset Tracker**: Local sunrise and sunset timings tailored to searched locations.
 
@@ -37,14 +61,16 @@ A premium, single-page **Glassmorphism Weather Dashboard** built with modern HTM
 
 ```
 SKYBYTE/
-├── index.html         # Main dashboard structure & layout
-├── style.css          # Glassmorphism design system & weather animations
-├── app.js             # Core application logic, Voice API & Audio engine
-├── weather-icons.js   # Animated SVG weather icons engine
-├── logo.png           # SKY-BYTE brand logo & tab favicon
-├── .env.example       # API key environment configuration template
-├── .gitignore         # Secret protection rules
-└── README.md          # Project documentation
+├── index.html           # Main dashboard structure & layout
+├── style.css            # Glassmorphism design system & weather animations
+├── app.js               # Core application logic, Voice API & Audio engine
+├── weather-icons.js     # Animated SVG weather icons engine
+├── logo.png             # SKY-BYTE brand logo & tab favicon
+├── desktop_screenshot.png # Desktop dashboard preview
+├── mobile_screenshot.png  # Mobile responsive dashboard preview
+├── .env.example         # API key environment configuration template
+├── .gitignore           # Secret protection rules
+└── README.md            # Project documentation
 ```
 
 ---
