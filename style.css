@@ -947,55 +947,213 @@ body.dark .main {
   }
 }
 
-/* Standard Mobile Devices (up to 560px) */
-@media (max-width: 560px) {
+/* Standard Mobile Devices (up to 600px) - Compact Native App Layout */
+@media (max-width: 600px) {
+  body {
+    padding: 6px;
+  }
+
+  .card, .glass-panel {
+    border-radius: 14px;
+    padding: 8px 10px;
+  }
+
   header {
-    flex-wrap: wrap;
+    margin-bottom: 6px;
   }
 
   header h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .header-logo {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
-  .sub-features-row {
-    grid-template-columns: 1fr;
+  .sound-btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .theme-switch {
+    width: 50px;
+    height: 25px;
+  }
+
+  .switch-slider::before {
+    width: 17px;
+    height: 17px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  .theme-switch input:checked + .switch-slider::before {
+    transform: translateX(24px);
+  }
+
+  .search-container {
+    margin-bottom: 6px;
+  }
+
+  .search {
+    padding: 4px 6px;
     gap: 6px;
   }
 
+  .search input {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+
+  .mic-btn {
+    padding: 6px 8px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .search button#search-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .favorites-bar {
+    margin-bottom: 6px;
+  }
+
+  .fav-chip {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 14px;
+  }
+
+  .main {
+    padding: 10px 12px;
+  }
+
   .weather-hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    margin-top: 2px;
   }
 
   .weather-hero img, .weather-icon-hero svg {
-    width: 75px !important;
-    height: 75px !important;
+    width: 54px !important;
+    height: 54px !important;
   }
 
   .weather-hero h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  #desc {
+    font-size: 0.88rem;
+  }
+
+  #location {
+    font-size: 0.85rem;
+  }
+
+  #time {
+    font-size: 0.72rem;
   }
 
   .main-header-row {
-    justify-content: center;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .badge, .clothing-tip-badge {
+    font-size: 0.68rem;
+    padding: 2px 7px;
+  }
+
+  .sub-features-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .sun-time-card {
+    grid-column: span 2;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .air-card, .uv-card {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+
+  .aqi-badge, .uv-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .stats-container {
     gap: 6px;
   }
 
   .stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
   }
 
   .stats .card {
-    padding: 8px 4px;
+    padding: 6px 2px;
+    font-size: 0.72rem;
+  }
+
+  .stats .card span {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .wind-card {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  #arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar-forecast h3 {
+    font-size: 0.88rem;
+  }
+
+  .forecast-vertical {
+    gap: 6px;
+  }
+
+  .forecast-item {
+    min-width: 78px;
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+
+  .forecast-item .day-name {
+    font-size: 0.78rem;
+  }
+
+  .forecast-item .forecast-icon svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .forecast-item .day-temp {
+    font-size: 0.85rem;
   }
 }
+
 
 /* Small Mobile Screens (up to 380px) */
 @media (max-width: 380px) {
