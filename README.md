@@ -1,63 +1,77 @@
-# 🌤️ Weather App
+# 🌦️ SKY-BYTE | Next-Gen Interactive Weather Dashboard
 
-A clean and responsive weather application built using **HTML**, **CSS**, and **JavaScript** that provides real-time weather information based on the user's current location using the **OpenWeatherMap API**.
-
-<p align="center">
-  <a href="https://weather-app-seven-ashen-32.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/🔴 Live-Demo-green?style=for-the-badge" /></a>
-  <a href="https://github.com/Satyam6201/Weather-app" target="_blank"><img src="https://img.shields.io/badge/💻 Source-Code-blue?style=for-the-badge" /></a>
-  <a href="https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/" target="_blank"><img src="https://img.shields.io/badge/📇 Connect-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin" /></a>
-</p>
+A premium, single-page **Glassmorphism Weather Dashboard** built with modern HTML5, CSS3, Vanilla JavaScript, Canvas Particle Physics, Web Audio API, and OpenWeatherMap APIs.
 
 ---
 
-## 📸 Screenshots
+## 🌟 Key Features
 
-![image](https://github.com/user-attachments/assets/710a9618-e99d-4439-bf00-983d28726018)
-![image](https://github.com/user-attachments/assets/c33a8ff3-4161-432b-9409-0fdbbee350f7)
-
----
-
-## 🚀 Features
-
-- 🌍 Auto-detect user location using **Geolocation API**
-- 🌦️ Displays:
-  - Weather icon
-  - Temperature (toggle between °C/°F)
-  - Weather description
-  - City & Country
-  - Wind speed
-- 🌗 **Dark Mode Toggle**
-- 📱 Responsive Design with modern UI
-- 📡 Real-time data using **OpenWeatherMap API**
+- **💎 Modern Glassmorphism UI**: Ultra-clean backdrop blur cards, dark mode toggle, and single-screen dashboard layout.
+- **🌤️ Dynamic Reactive Weather Backgrounds**:
+  - ☀️ **Sunny / Clear**: Radiant pulsing sun glow and warm sky gradient.
+  - 🌧️ **Rain & Drizzle**: High-performance HTML5 Canvas raindrop particle engine.
+  - ⚡️ **Thunderstorm**: Flashing screen lightning overlay effect with storm cloud layers.
+  - ❄️ **Snow**: Soft drifting snowfall canvas physics engine.
+- **✨ Animated SVG Weather Icons**: Living micro-scene SVG weather icons with rotation, flashing lightning, rain animation, and drifting clouds.
+- **🎙️ AI Voice Search**: Integrated Web Speech API for hands-free voice city searching.
+- **🔊 Generative Soundscape Audio**: Web Audio API procedural sound engine generating ambient rain noise and calming synth tones.
+- **🔍 Smart Autocomplete**: Real-time city search suggestions using OpenWeather Direct Geocoding.
+- **🍃 Live Air Quality Index (AQI)**: Color-coded air quality readings (Good 🟢, Moderate 🟠, Poor 🔴, Very Poor 🟣).
+- **💡 Smart Outfit & Travel Advisor**: Real-time clothing recommendations based on temperature and weather conditions.
+- **🌅 Sunrise & Sunset Tracker**: Local sunrise and sunset timings tailored to searched locations.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
-- **OpenWeatherMap API**
+- **HTML5 & Semantic Markup**
+- **CSS3 (Vanilla CSS, Glassmorphism, Keyframes & CSS Grid)**
+- **JavaScript (ES6+)**
+- **HTML5 Canvas (Particle Physics Engine)**
+- **Web Audio API & Web Speech API**
+- **OpenWeatherMap Weather, Geocoding & Air Pollution APIs**
 
 ---
 
-## 🧠 How It Works
+## 📁 File Structure
 
-1. Detects the user's geolocation.
-2. Fetches weather data from OpenWeatherMap using latitude & longitude.
-3. Displays weather icon, temperature, description, location, and wind speed.
-4. Allows users to toggle between Celsius and Fahrenheit.
-5. Users can toggle between Light and Dark themes.
+```
+SKYBYTE/
+├── index.html         # Main dashboard structure & layout
+├── style.css          # Glassmorphism design system & weather animations
+├── app.js             # Core application logic, Voice API & Audio engine
+├── weather-icons.js   # Animated SVG weather icons engine
+├── logo.png           # SKY-BYTE brand logo & tab favicon
+├── .env.example       # API key environment configuration template
+├── .gitignore         # Secret protection rules
+└── README.md          # Project documentation
+```
 
 ---
 
-## 📂 File Structure
+## 🚀 Setup & Local Execution
 
-Weather-app/
-```
-├── index.html # Main HTML file
-├── style.css # All styles
-├── app.js # JavaScript logic
-├── icons/ # Folder for default icons
-└── README.md
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yuriboiii20-art/SKY_BYTE.git
+   cd SKY_BYTE
+   ```
+
+2. **Configure OpenWeather API Key**:
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Add your OpenWeather API key inside `.env` or set `OWM_API_KEY` in `localStorage`.
+
+3. **Run Locally**:
+   - Open `index.html` directly in your browser, or serve via local static server:
+     ```bash
+     npx serve .
+     ```
+
+---
+
+## 📝 License
+
+Distributed under the MIT License.
