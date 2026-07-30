@@ -1,57 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather App</title>
+  <title>SKY-BYTE</title>
+  <!-- 🌐 Favicon (Tab Logo) -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="shortcut icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
 
-<div class="app fade-in">
-  <header>
-    <h1>🌦 Weather</h1>
-    <button id="toggle-mode">🌙</button>
-  </header>
+<body class="weather-default">
 
-  <div class="search card">
-    <input id="search-input" placeholder="Search city..." />
-    <button id="search-btn">Search</button>
+  <!-- 🌤 Dynamic Weather Effects Container -->
+  <div id="weather-fx" class="weather-fx-container">
+    <!-- Sunny / Clear FX -->
+    <div class="sun-glow"></div>
+
+    <!-- Rain / Drizzle / Snow Canvas FX -->
+    <canvas id="precip-canvas"></canvas>
+
+    <!-- Lightning Flash FX -->
+    <div id="lightning-flash" class="lightning-flash"></div>
+
+    <!-- Animated Clouds FX -->
+    <div class="clouds-bg">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
+    </div>
   </div>
 
-  <p class="notification"></p>
-  <div class="loader" id="loader"></div>
+  <div class="app fade-in">
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="SKY-BYTE Logo" class="header-logo" />
+        <h1>SKY-BYTE</h1>
+      </div>
+      
+      <div class="header-controls">
+        <!-- 🔊 Weather Ambient Soundscape Toggle Button -->
+        <button id="soundscape-btn" class="glass-btn sound-btn" title="Toggle Weather Audio Ambient Soundscape">
+          <span id="sound-icon">🔇</span> Sound
+        </button>
 
-  <section class="main card">
-    <span class="badge" id="geo-badge">📍 Current Location</span>
-    <img id="weather-icon" />
-    <h2 id="temp">--°C</h2>
-    <p id="desc">---</p>
-    <p id="location">---</p>
-    <p id="time">---</p>
-  </section>
+        <!-- Creative Animated Theme Switch -->
+        <label class="theme-switch" title="Toggle Day / Night Mode">
+          <input type="checkbox" id="toggle-mode-checkbox">
+          <span class="switch-slider">
+            <span class="switch-icon sun">☀️</span>
+            <span class="switch-icon moon">🌙</span>
+          </span>
+        </label>
+      </div>
+    </header>
 
-  <section class="stats">
-    <div class="card">Feels <span id="feels">--</span>°</div>
-    <div class="card">Humidity <span id="humidity">--</span>%</div>
-    <div class="card">Pressure <span id="pressure">--</span> hPa</div>
-    <div class="card">Wind <span id="wind">--</span> km/h</div>
-    <div class="card">Min <span id="min">--</span>°</div>
-    <div class="card">Max <span id="max">--</span>°</div>
-  </section>
+    <!-- Top Search Bar with Voice Search Button -->
+    <div class="search-container">
+      <div class="search card glass-panel">
+        <input id="search-input" placeholder="Search city..." autocomplete="off" />
+        <button id="mic-btn" class="mic-btn" title="Voice Search">🎙️</button>
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="autocomplete-list" class="autocomplete-dropdown glass-panel"></div>
+    </div>
 
-  <section class="wind-card card">
-    Wind Direction
-    <svg id="arrow" viewBox="0 0 24 24">
-      <line x1="12" y1="20" x2="12" y2="4"/>
-      <polyline points="5 11 12 4 19 11"/>
-    </svg>
-  </section>
+    <p class="notification" id="notification"></p>
+    <div class="loader" id="loader"></div>
 
-  <h3>5-Day Forecast</h3>
-  <div id="forecast" class="forecast"></div>
-</div>
+    <!-- Main Dashboard 2-Column Grid Layout -->
+    <div class="dashboard-grid">
 
-<script src="app.js"></script>
+      <!-- LEFT COLUMN: 5-Day Forecast -->
+      <aside class="sidebar-forecast">
+        <h3>5-Day Forecast</h3>
+        <div id="forecast" class="forecast-vertical"></div>
+      </aside>
+
+      <!-- RIGHT COLUMN: Main Glassmorphism Box & Weather Stats -->
+      <main class="main-content">
+        <section class="main card glass-panel">
+          <div class="main-header-row">
+            <span class="badge" id="geo-badge">📍 Current Location</span>
+            <span class="clothing-tip-badge" id="clothing-tip">💡 Tip: Loading...</span>
+          </div>
+          <div class="weather-hero">
+            <div id="weather-icon-container" class="weather-icon-hero"></div>
+            <div>
+              <h2 id="temp" title="Click to toggle °C / °F">--°C</h2>
+              <p id="desc">---</p>
+              <p id="location">---</p>
+              <p id="time">---</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Advanced Sun & Air Quality Bar -->
+        <section class="sub-features-row">
+          <div class="card glass-panel air-card">
+            <span>🍃 Air Quality</span>
+            <span id="aqi-val" class="aqi-badge">--</span>
+          </div>
+          <div class="card glass-panel sun-time-card">
+            <span>🌅 Sunrise <strong id="sunrise-time">--:--</strong></span>
+            <span>🌇 Sunset <strong id="sunset-time">--:--</strong></span>
+          </div>
+        </section>
+
+        <section class="stats-container">
+          <div class="stats">
+            <div class="card glass-panel">Feels <span id="feels">--</span>°</div>
+            <div class="card glass-panel">Humidity <span id="humidity">--</span>%</div>
+            <div class="card glass-panel">Pressure <span id="pressure">--</span> hPa</div>
+            <div class="card glass-panel">Wind <span id="wind">--</span> km/h</div>
+            <div class="card glass-panel">Min <span id="min">--</span>°</div>
+            <div class="card glass-panel">Max <span id="max">--</span>°</div>
+          </div>
+
+          <div class="wind-card card glass-panel">
+            <span>Wind Direction</span>
+            <svg id="arrow" viewBox="0 0 24 24">
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <polyline points="5 11 12 4 19 11" />
+            </svg>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="weather-icons.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
