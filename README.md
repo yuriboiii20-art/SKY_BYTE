@@ -13,9 +13,7 @@
   <img src="https://img.shields.io/badge/Design-Glassmorphism-00eaff?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Responsive-Mobile--First-ff4757?style=for-the-badge" />
 </p>
-
----
-
+-
 ## 📸 Application Screenshots
 
 ### 💻 Desktop Dashboard Layout
