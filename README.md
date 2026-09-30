@@ -7,7 +7,7 @@
 <p align="center">
   A premium, single-page <strong>Glassmorphism Weather Dashboard</strong> built with HTML5, CSS3, Vanilla JavaScript, HTML5 Canvas Physics, Web Audio API, and OpenWeather APIs.
 </p>
-
+--
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Design-Glassmorphism-00eaff?style=for-the-badge" />
