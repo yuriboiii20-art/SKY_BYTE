@@ -15,7 +15,7 @@
 </p>
 -
 ## 📸 Application Screenshots
----
+
 ### 💻 Desktop Dashboard Layout
 ![SKY-BYTE Desktop Dashboard](desktop_screenshot.png)
 
